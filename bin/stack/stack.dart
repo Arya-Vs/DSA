@@ -1,66 +1,25 @@
-class Node{
-  int data;
-  Node? next;
+import '../Recursion/recursive_binary_search.dart';
 
-  Node(this.data);
+void main(){
+  List<int>array=[3,41,53,145,1];
+  int target=1;
+  int result=binarySearch(array, target);
+  print(result);
+
 }
-class Stack{
-  Node? top;
-  push(int data){
-    Node value = Node(data);
-    if(top==null){
-      top = value;
+
+int binarySearch(List<int>array,int target){
+  int leftindex=0;
+  int rightindex=array.length-1;
+  while(leftindex<=rightindex){
+    int middile=array.length~/2;
+    if(array[middile]==target){
+      return middile;
+    }else if(array[middile]<target){
+      leftindex=middile+1;
     }else{
-      value.next = top;
+      rightindex=middile-1;
     }
-    top = value;
   }
-
-  int pop(){
-    
-    if(top==null){
-      return throw Exception("top is null");
-    }
-    int popoedValue = top!.data;
-    top = top!.next;
-
-    return popoedValue;
-  }
- int middleElement (){
-  Node? fast  = top;
-  Node? slow = top;
-
-  while(fast!=null&&fast.next!=null){
-    slow = slow!.next;
-    fast = fast.next!.next;
-  }
-  if(slow!=null){
-    return slow.data;
-  }else{
-    return throw Exception("null");
-  }
- }
- display(){
-  Node? cr = top;
-  if(cr==null){
-    return;
-  }
-  while(cr!=null){
-    print(cr.data);
-    cr=cr.next;
-  }
- }
-}
-void main(List<String> args) {
-  Stack  wr = Stack();
-  wr.push(20);
-  wr.push(40);
-  wr.push(60);
-  wr.push(80);
-  int pop = wr.pop();
-  
-  wr.display();
-  print("popped value $pop");
-   int middle = wr.middleElement();
-   print("middle element $middle");
+  return -1;
 }

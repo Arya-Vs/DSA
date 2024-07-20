@@ -1,141 +1,63 @@
-
-class Node {
+class Node{
   int data;
-  Node? right;
-  Node? left;
+  Node?rigth;
+  Node?left;
   Node(this.data);
 }
-
-class Treee {
+class Treee{
   Node? root;
 
-  insert(int data) {
-    Node value = Node(data);
-    Node? curr = root;
-    Node? parent;
+  insert(int data){
+    Node value=Node(data);
+    Node?curr=root;
+    Node?parent;
 
-    if (root == null) {
-      root = value;
+    if(root==null){
+      root=value;
       return;
     }
-
-    while (curr != null) {
+    while(curr != null){
       parent = curr;
-      if (data < curr.data) {
-        curr = curr.left;
+      if(data<curr.data){
+        curr=curr.left;
       }
-      if (curr == null) {
-        parent.left = value;
+      if(curr==null){
+        parent.left=value;
         return;
-      } else if (data > curr.data) {
-        curr = curr.right;
-        if (curr == null) {
-          parent.right = value;
+     
+      }else if(data>curr.data){
+        curr=curr.rigth;
+        if(curr==null){
+          parent.rigth=value;
           return;
         }
-      } else {
+      }else{
         return;
       }
     }
   }
+ void _dfsTraversal(Node?node){
+  if(node==null)return;
 
-  displayInorder() {
-    print("Inorder Traversal:");
-    _inOrderTraversel(root);
-    print("");
-  }
+  print(node.data);
+  _dfsTraversal(node.left);
+  _dfsTraversal(node.rigth);
+ }
 
-  displayPreOrder() {
-    print("Preorder Traversal:");
-    _preOrderTraversel(root);
-    print("");
-  }
-
-  displayPostOrder() {
-    print("Postorder Traversal:");
-    _postOrderTraversal(root);
-    print("");
-  }
-
-  bool isBst(Node? node, int? minValue, int? maxValue) {
-    if (node == null) {
-      return true;
-    }
-    if ((minValue != null && node.data <= minValue) ||
-        (maxValue != null && node.data >= maxValue)) {
-      return false;
-    }
-    return isBst(node.left, minValue, node.data) &&
-        isBst(node.right, node.data, maxValue);
-  }
-
-  bool isBinarySearchTree() {
-    return isBst(root, null, null);
-  }
-
+ void dfs(){
+  print("DFS Traversal:");
+  _dfsTraversal(root);
+ }
  
-
-  void _inOrderTraversel(Node? treen) {
-    if (treen != null) {
-      _inOrderTraversel(treen.left);
-      print(treen.data);
-      _inOrderTraversel(treen.right);
-    }
-  }
-
-  void _preOrderTraversel(Node? treen) {
-    if (treen != null) {
-      print(treen.data);
-      _preOrderTraversel(treen.left);
-      _preOrderTraversel(treen.right);
-    }
-  }
-
-  void _postOrderTraversal(Node? treen) {
-    if (treen != null) {
-      _postOrderTraversal(treen.left);
-      _postOrderTraversal(treen.right);
-      print(treen.data);
-    }
-  }
-
-  void dfs(){
-    print("DFS Traversal:");
-    _dfsTraversal(root);
-  }
-  void _dfsTraversal(Node?node){
-    if(node==null) return;
-
-    print(node.data);// print the current nodes data
-
-    _dfsTraversal(node.left); //Traverse left subtree
-    _dfsTraversal(node.right); //Traverse right subtree
-
-  }
-  void inOrderTraversel(Node?treen){
-    if(treen!=null){
-      _inOrderTraversel(treen.left);
-      print(treen.data);
-      _inOrderTraversel(treen.right);
-    }
-  }
+ 
 }
+void main(List<String>args){
+  Treee obj=Treee();
+  obj.insert(10);
+  obj.insert(20);
+  obj.insert(30);
+  obj.insert(40);
+  obj.insert(50);
+  obj.dfs();
 
-void main(List<String> args) {
-  Treee wroom = Treee();
-  wroom.insert(10);
-  wroom.insert(20);
-  wroom.insert(30);
-  wroom.insert(40);
-  wroom.insert(50);
-  wroom.insert(60);
-  wroom.insert(70);
-  wroom.insert(80);
-  wroom.displayInorder();
-  wroom.displayPreOrder();
-  wroom.displayPostOrder();
-  print("___________");
-  wroom.dfs();
-  print("_________________");
- 
 }

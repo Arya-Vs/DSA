@@ -121,6 +121,9 @@ class LinkedList{
       head = newNode;
     }
   }
+
+
+
   remove(int data){
 
     Node? temp = head;
@@ -142,6 +145,10 @@ class LinkedList{
     prev!.next = temp!.next;
 
   }
+
+
+
+  
 }
 void main(List<String> args) {
   LinkedList link  = LinkedList();

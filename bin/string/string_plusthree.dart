@@ -20,3 +20,4 @@ String replaceEachAlphaToAnother(String str, int key) {
 
   return charArray.join();
 }
+

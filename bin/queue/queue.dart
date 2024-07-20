@@ -4,9 +4,7 @@ class Node<T> {
   T? value;
   Node? next;
 
-  Node({
-    this.value,
-  });
+  Node({ this.value,});
 }
 
 class Queue {

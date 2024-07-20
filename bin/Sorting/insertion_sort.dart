@@ -3,9 +3,8 @@ void main(List<String> args) {
   insertionSort(array: array);
   print(array);
 }
-
 insertionSort({required List<int>array}){
-  for(int i=0;i<array.length;i++){
+  for(int i=0;i<=array.length-1;i++){
     int temp = array[i];
     int j = i-1;
     while(j>=0 && array[j]>temp){

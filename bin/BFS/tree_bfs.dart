@@ -40,24 +40,6 @@ class Treee {
     }
   }
 
-  displayInorder() {
-    print("Inorder Traversal:");
-    _inOrderTraversel(root);
-    print("");
-  }
-
-  displayPreOrder() {
-    print("Preorder Traversal:");
-    _preOrderTraversel(root);
-    print("");
-  }
-
-  displayPostOrder() {
-    print("Postorder Traversal:");
-    _postOrderTraversal(root);
-    print("");
-  }
-
   bool isBst(Node? node, int? minValue, int? maxValue) {
     if (node == null) {
       return true;
@@ -95,29 +77,6 @@ class Treee {
     }
   }
 
-  void _inOrderTraversel(Node? treen) {
-    if (treen != null) {
-      _inOrderTraversel(treen.left);
-      print(treen.data);
-      _inOrderTraversel(treen.right);
-    }
-  }
-
-  void _preOrderTraversel(Node? treen) {
-    if (treen != null) {
-      print(treen.data);
-      _preOrderTraversel(treen.left);
-      _preOrderTraversel(treen.right);
-    }
-  }
-
-  void _postOrderTraversal(Node? treen) {
-    if (treen != null) {
-      _postOrderTraversal(treen.left);
-      _postOrderTraversal(treen.right);
-      print(treen.data);
-    }
-  }
 }
 
 void main(List<String> args) {
@@ -129,11 +88,9 @@ void main(List<String> args) {
   wroom.insert(50);
   wroom.insert(60);
   wroom.insert(70);
-  wroom.insert(80);
-  wroom.displayInorder();
-  wroom.displayPreOrder();
-  wroom.displayPostOrder();
+  // wroom.insert(80);
+
   bool isbst = wroom.isBinarySearchTree();
   print("Is Binary Search Tree: $isbst");
-  wroom.bfs();
+  // wroom.bfs();
 }

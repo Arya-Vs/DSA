@@ -4,13 +4,11 @@ class Graph {
   Graph() {
     adjacencyList = {};
   }
-
   void addVertex(int vertex) {
     if (!adjacencyList!.containsKey(vertex)) {
       adjacencyList?[vertex] = [];
     }
   }
-
   void addEdge(int vertex1, int vertex2) {
     if (adjacencyList!.containsKey(vertex1) && adjacencyList!.containsKey(vertex2)) {
       adjacencyList?[vertex1]!.add(vertex2);
@@ -19,7 +17,6 @@ class Graph {
       throw ArgumentError("Both vertices must exist in the graph.");
     }
   }
-
   void printGraph() {
     adjacencyList!.forEach((key, value) {
       print("$key -> ${value.join(', ')}");

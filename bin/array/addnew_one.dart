@@ -2,7 +2,6 @@
 //   List<int> numbers = [1, 2, 3, 4, 5];
 //   print('enter a number:');
   
-  
 //   print(numbers); 
 // }
 
@@ -24,12 +23,12 @@
 //     }
 //   }
 //   return[];
-
+// }
 
 ///////// ADD ///////
 
 
-// }
+
 // void main() {
 //   List<int> appendedList = appendElement([3, 3, 3, 1], 8);
 //   print("Array after inserting at last: $appendedList");

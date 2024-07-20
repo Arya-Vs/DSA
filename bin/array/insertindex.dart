@@ -1,5 +1,5 @@
 void main() {
-  List<int> insertIndexResult = insertAtIndex([2, 3, 4, 5, ], 3, 5);
+  List<int> insertIndexResult = insertAtIndex([2, 3, 4, 5, ], 3, 10);
   print("Array after insertion at index: $insertIndexResult");
 }
 

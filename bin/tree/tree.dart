@@ -1,4 +1,3 @@
-
 class Node {
   int data;
   Node? right;
@@ -76,11 +75,6 @@ class Treee{
     print('tree:');
     postOrderTraversal(root);
   }
-
-  
-
-
- 
   bool isBst(Node? node,int? minValue,int? maxValue){
     if(node==null){
       return true;
@@ -93,9 +87,6 @@ class Treee{
   bool isBinarySearchTree(){
    return isBst(root, null, null);
   }
-  
-
-  
 }
 void main(List<String> args) {
   Treee wroom = Treee();
@@ -108,9 +99,9 @@ void main(List<String> args) {
   wroom.insert(70);
   wroom.insert(80);
  // wroom.delete(10);
-  wroom.displayInorder();
-  wroom.displayPreOder();
-  wroom.diplayPostOrder();
+  // wroom.displayInorder();
+  // wroom.displayPreOder();
+  // wroom.diplayPostOrder();
   bool isbst = wroom.isBinarySearchTree();
   print(isbst);
 }
