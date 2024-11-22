@@ -35,7 +35,8 @@ void main() {
 
   if (duplicateSet.isEmpty) {
     print("No duplicate elements found.");
-  } else {
+  } 
+  else {
     print("Duplicate elements found: ${duplicateSet.toList()..sort()}");
   }
 }

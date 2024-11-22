@@ -1,0 +1,20 @@
+void main() {
+  var value = 42;
+  print('Initial value: $value (Type: ${value.runtimeType})');
+  // same type
+  value = 2;
+  print('Changed value: $value (Type: ${value.runtimeType})');
+  
+}
+
+import 'dart:io';
+
+void main(){
+  dynamic value=2;
+  print(value);
+  
+  //diff type
+
+  value='arya';
+  print(value);
+}

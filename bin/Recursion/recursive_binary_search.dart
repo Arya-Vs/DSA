@@ -1,6 +1,5 @@
 void main() {
-  Learn n=Learn();
-  n.learn();
+ 
 
   List<int> arr = [1, 3, 4, 5, 7, 8];
   int target = 8;
@@ -28,12 +27,12 @@ int binarySearch(List<int> arr, int target) {
 }
 
 
-class Learn{
-  learn(){
-    List<int>numbers=[1,2,3,4,5];
-numbers.insert(0, 8);
-numbers.remove(8);
-print(numbers);
-  }
-}
+// class Learn{
+//   learn(){
+//     List<int>numbers=[1,2,3,4,5];
+// numbers.insert(0, 8);
+// numbers.remove(8);
+// print(numbers);
+//   }
+// }
 

@@ -40,21 +40,21 @@ class Treee {
     }
   }
 
-  bool isBst(Node? node, int? minValue, int? maxValue) {
-    if (node == null) {
-      return true;
-    }
-    if ((minValue != null && node.data <= minValue) ||
-        (maxValue != null && node.data >= maxValue)) {
-      return false;
-    }
-    return isBst(node.left, minValue, node.data) &&
-        isBst(node.right, node.data, maxValue);
-  }
+  // bool isBst(Node? node, int? minValue, int? maxValue) {
+  //   if (node == null) {
+  //     return true;
+  //   }
+  //   if ((minValue != null && node.data <= minValue) ||
+  //       (maxValue != null && node.data >= maxValue)) {
+  //     return false;
+  //   }
+  //   return isBst(node.left, minValue, node.data) &&
+  //       isBst(node.right, node.data, maxValue);
+  // }
 
-  bool isBinarySearchTree() {
-    return isBst(root, null, null);
-  }
+  // bool isBinarySearchTree() {
+  //   return isBst(root, null, null);
+  // }
 
   void bfs() {
     if (root == null) return;
@@ -90,7 +90,7 @@ void main(List<String> args) {
   wroom.insert(70);
   // wroom.insert(80);
 
-  bool isbst = wroom.isBinarySearchTree();
-  print("Is Binary Search Tree: $isbst");
+  // bool isbst = wroom.isBinarySearchTree();
+  // print("Is Binary Search Tree: $isbst");
   // wroom.bfs();
 }

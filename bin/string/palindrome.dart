@@ -17,8 +17,17 @@ void main() {
     print("palindrome");
   }
   else{
-        print("not palindrome");
-
-  }
+    print("not palindrome");
+  } 
 }
 
+// bool isPalindrome(String str) {
+//   String reversed = str.split('').reversed.join('');
+//   if(str == reversed){
+//     return true;
+//   }
+//   return false;
+// }
+// void main(){
+//   print(isPalindrome('rahul'));
+// }

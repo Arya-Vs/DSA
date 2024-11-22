@@ -1,19 +1,24 @@
-// import 'dart:convert';
+import 'dart:io';
 
-// import 'package:http/http.dart' as http;
+void main(){
+  int num;
+  bool prime=true;
 
-// Future<dynamic>apicall(String url)async{
-//   try{
-//     http.Response response;
-//     response=await http.get(Uri.parse(url));
-//     if(response.statusCode==200){
-//       Map<String,dynamic>data=jsonDecode(response.body) as Map<String,dynamic>;
-//       TMDBApiResponseModel tmdbApiResponse=TMDBApiResponseModel.fromJson(data);
-//       return tmdbApiResponse;
-//     }else{
-//       throw 'not found ${response.statusCode}';
-//     }
-//   }catch(error){
-//     throw 'null $error';
-//   }
-// }
+  print("Enter a number");
+  num=int.parse(stdin.readLineSync()!);
+  if(num<2){
+    prime=false;
+  }else{
+    for(int i=0;i<num~/2;i++){
+      if(num%i==0){
+        prime=false;
+        break;
+      }
+    }
+  }
+  if(prime){
+    print("prine");
+  }else{
+    print("Not prime");
+  }
+}

@@ -18,23 +18,23 @@ class MinHeap {
     }
   }
 
-  void heapifyDown(int index) {
-    int smallest = index;
-    int leftChild = 2 * index + 1;
-    int rightChild = 2 * index + 2;
+  // void heapifyDown(int index) {
+  //   int smallest = index;
+  //   int leftChild = 2 * index + 1;
+  //   int rightChild = 2 * index + 2;
 
-    if (leftChild < heap.length && heap[leftChild] < heap[smallest]) {
-      smallest = leftChild;
-    }
-    if (rightChild < heap.length && heap[rightChild] < heap[smallest]) {
-      smallest = rightChild;
-    }
+  //   if (leftChild < heap.length && heap[leftChild] < heap[smallest]) {
+  //     smallest = leftChild;
+  //   }
+  //   if (rightChild < heap.length && heap[rightChild] < heap[smallest]) {
+  //     smallest = rightChild;
+  //   }
 
-    if (smallest != index) {
-      swap(index, smallest);
-      heapifyDown(smallest);
-    }
-  }
+  //   if (smallest != index) {
+  //     swap(index, smallest);
+  //     heapifyDown(smallest);
+  //   }
+  // }
 
   void swap(int i, int j) {
     int temp = heap[i];

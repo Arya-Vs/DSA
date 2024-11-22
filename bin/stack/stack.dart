@@ -1,25 +1,51 @@
-import '../Recursion/recursive_binary_search.dart';
+import 'dart:io';
 
-void main(){
-  List<int>array=[3,41,53,145,1];
-  int target=1;
-  int result=binarySearch(array, target);
-  print(result);
+class Node<T> {
+  T? value;
+  Node? next;
 
+  Node({this.value});
 }
+class Stack {
+  Node? top;
 
-int binarySearch(List<int>array,int target){
-  int leftindex=0;
-  int rightindex=array.length-1;
-  while(leftindex<=rightindex){
-    int middile=array.length~/2;
-    if(array[middile]==target){
-      return middile;
-    }else if(array[middile]<target){
-      leftindex=middile+1;
-    }else{
-      rightindex=middile-1;
+  void push(value) {
+    Node newNode = Node(value: value);
+    if (top == null) {
+      top = newNode;
+      return;
+    }
+    newNode.next = top;
+    top = newNode;
+  }
+
+  void pop() {
+    if (top == null) {
+      print('Stack is empty');
+      return;
+    }
+    top = top!.next;
+  }
+
+  void display() {
+    Node? current = top;
+    while (current != null) {
+      stdout.write('${current.value}\t');
+      if (current.next == null) {
+        print('');
+      }
+      current = current.next;
     }
   }
-  return -1;
+}
+
+void main() {
+  Stack stack = Stack();
+  stack.push(1);
+  stack.push(2);
+  stack.push(3);
+  stack.push(10);
+  stack.display();
+  stack.pop();
+  stack.display();
 }
